@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>XPath学习 &middot; 漫路个人博客</title>
+    <meta name="generator" content="Hugo 0.67.1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="漫 路">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/"/>
+    <link rel="icon" href="https://zhang-550.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://zhang-550.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://zhang-550.github.io/css/style.css">
+    <link rel="stylesheet" href="https://zhang-550.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://zhang-550.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://zhang-550.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="XPath学习" />
+<meta property="og:description" content="1. 什么是XPath XPath 是一门在 XML 文档中查找信息的语言。XPath 可用来在 XML 文档中对元素和属性进行遍历。 XPath 是 W3C XSLT 标准的主要元素，并且 XQuery 和 XPointer 都构建于 XPath 表达之上。 因此，对 XPath 的理解是很多高级 XML 应用的基础。 W3School官方文档：http://www.w3school.com.cn/xpath/index.asp
+2. XPath的节点关系 2.1 XPath中的节点是什么  每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。  3. XPath中节点选择的工具 Chrome浏览器插件： XPath Helper 下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b Firefox浏览器插件：xPath Finder 注意： 这些工具是用来学习XPath语法的，当熟练掌握XPath的语法后就可以直接在代码中编写XPath而不一定非要用此工具。 4. XPath语法  我们将在下面的例子中使用这个 XML 文档  &lt;bookstore&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Harry Potter&lt;/title&gt; &lt;price&gt;29.99&lt;/price&gt; &lt;/book&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Learning XML&lt;/title&gt; &lt;price&gt;39.95&lt;/price&gt; &lt;/book&gt; &lt;/bookstore&gt; 4.1 选取节点 XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。 使用chrome插件选择标签时候，选中是时，选中的标签会添加属性class=“xh-highlight”  下面列出了最有用的表达式：     表达式 描述     nodename 选中该元素   / 从根节点选取、或者是元素和元素间的过渡   // 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置   ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/" />
+<meta property="article:published_time" content="2020-03-21T14:23:19+08:00" />
+<meta property="article:modified_time" content="2020-03-21T14:23:19+08:00" />
+
+    
+    <meta itemprop="name" content="XPath学习">
+<meta itemprop="description" content="1. 什么是XPath XPath 是一门在 XML 文档中查找信息的语言。XPath 可用来在 XML 文档中对元素和属性进行遍历。 XPath 是 W3C XSLT 标准的主要元素，并且 XQuery 和 XPointer 都构建于 XPath 表达之上。 因此，对 XPath 的理解是很多高级 XML 应用的基础。 W3School官方文档：http://www.w3school.com.cn/xpath/index.asp
+2. XPath的节点关系 2.1 XPath中的节点是什么  每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。  3. XPath中节点选择的工具 Chrome浏览器插件： XPath Helper 下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b Firefox浏览器插件：xPath Finder 注意： 这些工具是用来学习XPath语法的，当熟练掌握XPath的语法后就可以直接在代码中编写XPath而不一定非要用此工具。 4. XPath语法  我们将在下面的例子中使用这个 XML 文档  &lt;bookstore&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Harry Potter&lt;/title&gt; &lt;price&gt;29.99&lt;/price&gt; &lt;/book&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Learning XML&lt;/title&gt; &lt;price&gt;39.95&lt;/price&gt; &lt;/book&gt; &lt;/bookstore&gt; 4.1 选取节点 XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。 使用chrome插件选择标签时候，选中是时，选中的标签会添加属性class=“xh-highlight”  下面列出了最有用的表达式：     表达式 描述     nodename 选中该元素   / 从根节点选取、或者是元素和元素间的过渡   // 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置   .">
+<meta itemprop="datePublished" content="2020-03-21T14:23:19&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-21T14:23:19&#43;08:00" />
+<meta itemprop="wordCount" content="102">
+
+
+
+<meta itemprop="keywords" content="" />
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="XPath学习"/>
+<meta name="twitter:description" content="1. 什么是XPath XPath 是一门在 XML 文档中查找信息的语言。XPath 可用来在 XML 文档中对元素和属性进行遍历。 XPath 是 W3C XSLT 标准的主要元素，并且 XQuery 和 XPointer 都构建于 XPath 表达之上。 因此，对 XPath 的理解是很多高级 XML 应用的基础。 W3School官方文档：http://www.w3school.com.cn/xpath/index.asp
+2. XPath的节点关系 2.1 XPath中的节点是什么  每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。  3. XPath中节点选择的工具 Chrome浏览器插件： XPath Helper 下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b Firefox浏览器插件：xPath Finder 注意： 这些工具是用来学习XPath语法的，当熟练掌握XPath的语法后就可以直接在代码中编写XPath而不一定非要用此工具。 4. XPath语法  我们将在下面的例子中使用这个 XML 文档  &lt;bookstore&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Harry Potter&lt;/title&gt; &lt;price&gt;29.99&lt;/price&gt; &lt;/book&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Learning XML&lt;/title&gt; &lt;price&gt;39.95&lt;/price&gt; &lt;/book&gt; &lt;/bookstore&gt; 4.1 选取节点 XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。 使用chrome插件选择标签时候，选中是时，选中的标签会添加属性class=“xh-highlight”  下面列出了最有用的表达式：     表达式 描述     nodename 选中该元素   / 从根节点选取、或者是元素和元素间的过渡   // 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置   ."/>
+<meta name="twitter:site" content="@spf13"/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://zhang-550.github.io/" id="logo">
+          
+          <i class="logo" style="background-image: url('https://zhang-550.github.io/css/images/logo.png')"></i>
+          
+          <span class="site-title">漫路个人博客</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://zhang-550.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://zhang-550.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://zhang-550.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://zhang-550.github.io/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://zhang-550.github.io/" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://zhang-550.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://zhang-550.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://zhang-550.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://zhang-550.github.io/" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://www.gravatar.com/avatar/4fca794da0cf08804f99048d3c8b39c1?s=100&d=identicon"/>
+      
+      <h2 id="name">漫 路</h2>
+      <h3 id="title">Blogger - Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Earth</span>
+      
+          <a id="follow" href="https://github.com/digitalcraftsman">
+              
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        1
+        <span></span>
+      </div>
+      <div class="article-info-block">
+        
+          0
+        
+        <span>
+            
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/digitalcraftsman" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td><a href="//twitter.com/spf13" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></td>
+
+
+          <td><a href="https://zhang-550.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/">
+    <h1 class="article-title" itemprop="name">
+        XPath学习
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2020-03-21 14:23:19 &#43;0800 CST" itemprop="datePublished">2020-03-21</time>
+            &middot;
+            102
+            
+            &middot;
+            1
+            
+        </div>
+        
+        
+
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="1-什么是xpath">1. 什么是XPath</h1>
+<pre><code>XPath 是一门在 XML 文档中查找信息的语言。XPath 可用来在 XML 文档中对元素和属性进行遍历。
+XPath 是 W3C XSLT 标准的主要元素，并且 XQuery 和 XPointer 都构建于 XPath 表达之上。
+因此，对 XPath 的理解是很多高级 XML 应用的基础。
+</code></pre><p>W3School官方文档：http://www.w3school.com.cn/xpath/index.asp</p>
+<h1 id="2-xpath的节点关系">2. XPath的节点关系</h1>
+<h2 id="21-xpath中的节点是什么">2.1 XPath中的节点是什么</h2>
+<ul>
+<li>每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。</li>
+</ul>
+<p><img src="https://oscimg.oschina.net/oscnet/up-04f36386dfd00199038ca87cba3e1f17bc0.png" alt=""></p>
+<h1 id="3-xpath中节点选择的工具">3. XPath中节点选择的工具</h1>
+<pre><code>Chrome浏览器插件： XPath Helper
+下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b
+Firefox浏览器插件：xPath Finder
+注意： 这些工具是用来学习XPath语法的，当熟练掌握XPath的语法后就可以直接在代码中编写XPath而不一定非要用此工具。
+</code></pre><h1 id="4-xpath语法">4. XPath语法</h1>
+<ul>
+<li>我们将在下面的例子中使用这个 XML 文档</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;bookstore&gt;</span>
+
+<span style="color:#f92672">&lt;book&gt;</span>
+  <span style="color:#f92672">&lt;title</span> <span style="color:#a6e22e">lang=</span><span style="color:#e6db74">&#34;eng&#34;</span><span style="color:#f92672">&gt;</span>Harry Potter<span style="color:#f92672">&lt;/title&gt;</span>
+  <span style="color:#f92672">&lt;price&gt;</span>29.99<span style="color:#f92672">&lt;/price&gt;</span>
+<span style="color:#f92672">&lt;/book&gt;</span>
+
+<span style="color:#f92672">&lt;book&gt;</span>
+  <span style="color:#f92672">&lt;title</span> <span style="color:#a6e22e">lang=</span><span style="color:#e6db74">&#34;eng&#34;</span><span style="color:#f92672">&gt;</span>Learning XML<span style="color:#f92672">&lt;/title&gt;</span>
+  <span style="color:#f92672">&lt;price&gt;</span>39.95<span style="color:#f92672">&lt;/price&gt;</span>
+<span style="color:#f92672">&lt;/book&gt;</span>
+
+<span style="color:#f92672">&lt;/bookstore&gt;</span>
+</code></pre></div><h2 id="41-选取节点">4.1 选取节点</h2>
+<pre><code>XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。
+使用chrome插件选择标签时候，选中是时，选中的标签会添加属性class=“xh-highlight”
+</code></pre><ul>
+<li>下面列出了最有用的表达式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nodename</td>
+<td>选中该元素</td>
+</tr>
+<tr>
+<td>/</td>
+<td>从根节点选取、或者是元素和元素间的过渡</td>
+</tr>
+<tr>
+<td>//</td>
+<td>从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置</td>
+</tr>
+<tr>
+<td>.</td>
+<td>选取当前节点</td>
+</tr>
+<tr>
+<td>..</td>
+<td>选取当前节点的父节点</td>
+</tr>
+<tr>
+<td>@</td>
+<td>选取属性</td>
+</tr>
+<tr>
+<td>text()</td>
+<td>选取文本</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>实例(对应上面的表达式):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bookstore</td>
+<td>选择bookstore元素</td>
+</tr>
+<tr>
+<td>/bookstore</td>
+<td>选取跟元素bookstore。注：假如路径起始于正斜杠(/)，则此路径始终代表到某元素的绝对路径！</td>
+</tr>
+<tr>
+<td>bookstore/book</td>
+<td>选取属于bookstore的子元素的所有book元素</td>
+</tr>
+<tr>
+<td>//book</td>
+<td>选取所有book子元素,而不管它们在文档中的位置</td>
+</tr>
+<tr>
+<td>bookstore//book</td>
+<td>选取bookstore元素的后代的所有book元素,而不管它们位于bookstore之下的什么位置</td>
+</tr>
+<tr>
+<td>//book/title/@lang</td>
+<td>选择所有的book下面的title中的lang属性的值</td>
+</tr>
+<tr>
+<td>//book/title/text()</td>
+<td>选择所有的book下面的title的文本</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/" data-id="b5115f97e4be92dd1251133c02d469f4" class="article-share-link">
+        <i class="fa fa-share"></i>
+        
+    </a>
+    
+    <a href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/#disqus_thread" class="article-comment-link">
+        
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "spf13" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        
+    </h3>
+    <div class="widget">
+        <ul id="recent-post">
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-title"><a href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/" class="title">XPath学习</a></p>
+                    <p class="item-date">
+                        <time datetime="2020-03-21 14:23:19 &#43;0800 CST" itemprop="datePublished">2020-03-21</time>
+                    </p>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'zqh', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<script src="https://zhang-550.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://zhang-550.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>
