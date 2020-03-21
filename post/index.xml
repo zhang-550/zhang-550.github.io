@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Icarus</title>
+    <link>https://manlublog.github.io/post/</link>
+    <description>Recent content in Posts on Icarus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Mar 2020 14:23:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://manlublog.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Myfirst</title>
+      <link>https://manlublog.github.io/2020/03/21/myfirst/</link>
+      <pubDate>Sat, 21 Mar 2020 14:23:19 +0800</pubDate>
+      
+      <guid>https://manlublog.github.io/2020/03/21/myfirst/</guid>
+      <description>1. 什么是XPath XPath 是一门在 XML 文档中查找信息的语言。XPath 可用来在 XML 文档中对元素和属性进行遍历。 XPath 是 W3C XSLT 标准的主要元素，并且 XQuery 和 XPointer 都构建于 XPath 表达之上。 因此，对 XPath 的理解是很多高级 XML 应用的基础。 W3School官方文档：http://www.w3school.com.cn/xpath/index.asp
+2. XPath的节点关系 2.1 XPath中的节点是什么  每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。  3. XPath中节点选择的工具 Chrome浏览器插件： XPath Helper 下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b Firefox浏览器插件：xPath Finder 注意： 这些工具是用来学习XPath语法的，当熟练掌握XPath的语法后就可以直接在代码中编写XPath而不一定非要用此工具。 4. XPath语法  我们将在下面的例子中使用这个 XML 文档  &amp;lt;bookstore&amp;gt; &amp;lt;book&amp;gt; &amp;lt;title lang=&amp;#34;eng&amp;#34;&amp;gt;Harry Potter&amp;lt;/title&amp;gt; &amp;lt;price&amp;gt;29.99&amp;lt;/price&amp;gt; &amp;lt;/book&amp;gt; &amp;lt;book&amp;gt; &amp;lt;title lang=&amp;#34;eng&amp;#34;&amp;gt;Learning XML&amp;lt;/title&amp;gt; &amp;lt;price&amp;gt;39.95&amp;lt;/price&amp;gt; &amp;lt;/book&amp;gt; &amp;lt;/bookstore&amp;gt; 4.1 选取节点 XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。 使用chrome插件选择标签时候，选中是时，选中的标签会添加属性class=“xh-highlight”  下面列出了最有用的表达式：     表达式 描述     nodename 选中该元素   / 从根节点选取、或者是元素和元素间的过渡   // 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置   .</description>
+    </item>
+    
+  </channel>
+</rss>
