@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>XPath学习 &middot; 漫路个人博客</title>
+    <title> &middot; 漫路个人博客</title>
     <meta name="generator" content="Hugo 0.67.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,7 +10,7 @@
       <meta name="description" content="">
     
     
-    <link rel="canonical" href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/"/>
+    <link rel="canonical" href="https://zhang-550.github.io/1/01/01/"/>
     <link rel="icon" href="https://zhang-550.github.io/favicon.ico">
     <link rel="apple-touch-icon" href="https://zhang-550.github.io/apple-touch-icon.png"/>
     <link rel="stylesheet" href="https://zhang-550.github.io/css/style.css">
@@ -20,29 +20,30 @@
     
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
-    <meta property="og:title" content="XPath学习" />
-<meta property="og:description" content="1. 什么是XPath XPath 是一门在 XML 文档中查找信息的语言。XPath 可用来在 XML 文档中对元素和属性进行遍历。 XPath 是 W3C XSLT 标准的主要元素，并且 XQuery 和 XPointer 都构建于 XPath 表达之上。 因此，对 XPath 的理解是很多高级 XML 应用的基础。 W3School官方文档：http://www.w3school.com.cn/xpath/index.asp
-2. XPath的节点关系 2.1 XPath中的节点是什么  每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。  3. XPath中节点选择的工具 Chrome浏览器插件： XPath Helper 下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b Firefox浏览器插件：xPath Finder 注意： 这些工具是用来学习XPath语法的，当熟练掌握XPath的语法后就可以直接在代码中编写XPath而不一定非要用此工具。 4. XPath语法  我们将在下面的例子中使用这个 XML 文档  &lt;bookstore&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Harry Potter&lt;/title&gt; &lt;price&gt;29.99&lt;/price&gt; &lt;/book&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Learning XML&lt;/title&gt; &lt;price&gt;39.95&lt;/price&gt; &lt;/book&gt; &lt;/bookstore&gt; 4.1 选取节点 XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。 使用chrome插件选择标签时候，选中是时，选中的标签会添加属性class=“xh-highlight”  下面列出了最有用的表达式：     表达式 描述     nodename 选中该元素   / 从根节点选取、或者是元素和元素间的过渡   // 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置   ." />
+    <meta property="og:title" content="" />
+<meta property="og:description" content="额,一时兴起, 搭建一个基于hugo的个人博客玩一下 博客地址: https://zhang-550.github.io/
+1. 下载安装hugo 官网下载地址https://github.com/gohugoio/hugo/releases我们根据自身情况选择下载我是win64位的,所以就用win64进行演示了1.1 将安装包解压到指定目录 2. 配置环境变量  为什么要配置环境变量呢?  因为我们把hugo.exe解压到了D:\dev\hugo下面。hugo命令只能在该目录下才能识别。如果我们想把博客目录建到其它目录下，就要配置环境变量。2.1 步骤1：鼠标右键-&gt;属性 2.2 步骤2：点击高级系统设置 2.3 步骤3：点击环境变量 2.4 步骤4：选中path，点击编辑 2.5 步骤5：点击新建 2.6 步骤6：Hugo.exe目录,配置ok后点击确定，一路确定 3.hugo新建博客 3.1 打开cmd命令行   方式一: 快捷键:win&#43;R键 win就是你的键盘上的那个四个格格   方式二: 通过电脑搜索cmd   3.2 输入如下命令 命令: hugo new site /path/to/site比如 hugo new site E:/hugo/myBlogger就会在E盘的hugo文件夹下新建一个叫myBlogger的hugo站点3.2 hugo新建页面和文章 3.2.1 新建一个links页面 命令: hugo new links.mdlinks.md自动生成到了content.links.md, 内容如下
+3.2.2 创建第一篇文章,放到post目录, 方便以后生成聚合页面 命令: hugo new post/myfirst." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/" />
-<meta property="article:published_time" content="2020-03-21T14:23:19+08:00" />
-<meta property="article:modified_time" content="2020-03-21T14:23:19+08:00" />
+<meta property="og:url" content="https://zhang-550.github.io/1/01/01/" />
+
 
     
-    <meta itemprop="name" content="XPath学习">
-<meta itemprop="description" content="1. 什么是XPath XPath 是一门在 XML 文档中查找信息的语言。XPath 可用来在 XML 文档中对元素和属性进行遍历。 XPath 是 W3C XSLT 标准的主要元素，并且 XQuery 和 XPointer 都构建于 XPath 表达之上。 因此，对 XPath 的理解是很多高级 XML 应用的基础。 W3School官方文档：http://www.w3school.com.cn/xpath/index.asp
-2. XPath的节点关系 2.1 XPath中的节点是什么  每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。  3. XPath中节点选择的工具 Chrome浏览器插件： XPath Helper 下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b Firefox浏览器插件：xPath Finder 注意： 这些工具是用来学习XPath语法的，当熟练掌握XPath的语法后就可以直接在代码中编写XPath而不一定非要用此工具。 4. XPath语法  我们将在下面的例子中使用这个 XML 文档  &lt;bookstore&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Harry Potter&lt;/title&gt; &lt;price&gt;29.99&lt;/price&gt; &lt;/book&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Learning XML&lt;/title&gt; &lt;price&gt;39.95&lt;/price&gt; &lt;/book&gt; &lt;/bookstore&gt; 4.1 选取节点 XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。 使用chrome插件选择标签时候，选中是时，选中的标签会添加属性class=“xh-highlight”  下面列出了最有用的表达式：     表达式 描述     nodename 选中该元素   / 从根节点选取、或者是元素和元素间的过渡   // 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置   .">
-<meta itemprop="datePublished" content="2020-03-21T14:23:19&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-21T14:23:19&#43;08:00" />
-<meta itemprop="wordCount" content="102">
+    <meta itemprop="name" content="">
+<meta itemprop="description" content="额,一时兴起, 搭建一个基于hugo的个人博客玩一下 博客地址: https://zhang-550.github.io/
+1. 下载安装hugo 官网下载地址https://github.com/gohugoio/hugo/releases我们根据自身情况选择下载我是win64位的,所以就用win64进行演示了1.1 将安装包解压到指定目录 2. 配置环境变量  为什么要配置环境变量呢?  因为我们把hugo.exe解压到了D:\dev\hugo下面。hugo命令只能在该目录下才能识别。如果我们想把博客目录建到其它目录下，就要配置环境变量。2.1 步骤1：鼠标右键-&gt;属性 2.2 步骤2：点击高级系统设置 2.3 步骤3：点击环境变量 2.4 步骤4：选中path，点击编辑 2.5 步骤5：点击新建 2.6 步骤6：Hugo.exe目录,配置ok后点击确定，一路确定 3.hugo新建博客 3.1 打开cmd命令行   方式一: 快捷键:win&#43;R键 win就是你的键盘上的那个四个格格   方式二: 通过电脑搜索cmd   3.2 输入如下命令 命令: hugo new site /path/to/site比如 hugo new site E:/hugo/myBlogger就会在E盘的hugo文件夹下新建一个叫myBlogger的hugo站点3.2 hugo新建页面和文章 3.2.1 新建一个links页面 命令: hugo new links.mdlinks.md自动生成到了content.links.md, 内容如下
+3.2.2 创建第一篇文章,放到post目录, 方便以后生成聚合页面 命令: hugo new post/myfirst.">
+
+<meta itemprop="wordCount" content="96">
 
 
 
 <meta itemprop="keywords" content="" />
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="XPath学习"/>
-<meta name="twitter:description" content="1. 什么是XPath XPath 是一门在 XML 文档中查找信息的语言。XPath 可用来在 XML 文档中对元素和属性进行遍历。 XPath 是 W3C XSLT 标准的主要元素，并且 XQuery 和 XPointer 都构建于 XPath 表达之上。 因此，对 XPath 的理解是很多高级 XML 应用的基础。 W3School官方文档：http://www.w3school.com.cn/xpath/index.asp
-2. XPath的节点关系 2.1 XPath中的节点是什么  每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。  3. XPath中节点选择的工具 Chrome浏览器插件： XPath Helper 下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b Firefox浏览器插件：xPath Finder 注意： 这些工具是用来学习XPath语法的，当熟练掌握XPath的语法后就可以直接在代码中编写XPath而不一定非要用此工具。 4. XPath语法  我们将在下面的例子中使用这个 XML 文档  &lt;bookstore&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Harry Potter&lt;/title&gt; &lt;price&gt;29.99&lt;/price&gt; &lt;/book&gt; &lt;book&gt; &lt;title lang=&#34;eng&#34;&gt;Learning XML&lt;/title&gt; &lt;price&gt;39.95&lt;/price&gt; &lt;/book&gt; &lt;/bookstore&gt; 4.1 选取节点 XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。 使用chrome插件选择标签时候，选中是时，选中的标签会添加属性class=“xh-highlight”  下面列出了最有用的表达式：     表达式 描述     nodename 选中该元素   / 从根节点选取、或者是元素和元素间的过渡   // 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置   ."/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="额,一时兴起, 搭建一个基于hugo的个人博客玩一下 博客地址: https://zhang-550.github.io/
+1. 下载安装hugo 官网下载地址https://github.com/gohugoio/hugo/releases我们根据自身情况选择下载我是win64位的,所以就用win64进行演示了1.1 将安装包解压到指定目录 2. 配置环境变量  为什么要配置环境变量呢?  因为我们把hugo.exe解压到了D:\dev\hugo下面。hugo命令只能在该目录下才能识别。如果我们想把博客目录建到其它目录下，就要配置环境变量。2.1 步骤1：鼠标右键-&gt;属性 2.2 步骤2：点击高级系统设置 2.3 步骤3：点击环境变量 2.4 步骤4：选中path，点击编辑 2.5 步骤5：点击新建 2.6 步骤6：Hugo.exe目录,配置ok后点击确定，一路确定 3.hugo新建博客 3.1 打开cmd命令行   方式一: 快捷键:win&#43;R键 win就是你的键盘上的那个四个格格   方式二: 通过电脑搜索cmd   3.2 输入如下命令 命令: hugo new site /path/to/site比如 hugo new site E:/hugo/myBlogger就会在E盘的hugo文件夹下新建一个叫myBlogger的hugo站点3.2 hugo新建页面和文章 3.2.1 新建一个links页面 命令: hugo new links.mdlinks.md自动生成到了content.links.md, 内容如下
+3.2.2 创建第一篇文章,放到post目录, 方便以后生成聚合页面 命令: hugo new post/myfirst."/>
 <meta name="twitter:site" content="@spf13"/>
 
     
@@ -252,9 +253,9 @@
         
 
         <header class="article-header">
-    <a href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/">
+    <a href="https://zhang-550.github.io/1/01/01/">
     <h1 class="article-title" itemprop="name">
-        XPath学习
+        
     </h1>
     </a>
     <div class="article-meta">
@@ -262,9 +263,9 @@
         
         <div class="article-date">
             <i class="fa fa-calendar"></i>
-            <time datetime="2020-03-21 14:23:19 &#43;0800 CST" itemprop="datePublished">2020-03-21</time>
+            <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
             &middot;
-            102
+            96
             
             &middot;
             1
@@ -278,133 +279,95 @@
 </header>
 
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="1-什么是xpath">1. 什么是XPath</h1>
-<pre><code>XPath 是一门在 XML 文档中查找信息的语言。XPath 可用来在 XML 文档中对元素和属性进行遍历。
-XPath 是 W3C XSLT 标准的主要元素，并且 XQuery 和 XPointer 都构建于 XPath 表达之上。
-因此，对 XPath 的理解是很多高级 XML 应用的基础。
-</code></pre><p>W3School官方文档：http://www.w3school.com.cn/xpath/index.asp</p>
-<h1 id="2-xpath的节点关系">2. XPath的节点关系</h1>
-<h2 id="21-xpath中的节点是什么">2.1 XPath中的节点是什么</h2>
+            <h1 id="额一时兴起-搭建一个基于hugo的个人博客玩一下">额,一时兴起, 搭建一个基于hugo的个人博客玩一下</h1>
+<p>博客地址:   <a href="https://zhang-550.github.io/">https://zhang-550.github.io/</a></p>
+<h2 id="1-下载安装hugo">1. 下载安装hugo</h2>
+<pre><code>官网下载地址
+https://github.com/gohugoio/hugo/releases
+我们根据自身情况选择下载
+我是win64位的,所以就用win64进行演示了
+</code></pre><p><img src="https://oscimg.oschina.net/oscnet/up-ec0aea52ec117b3c22b12e2a39c645a3be5.png" alt=""></p>
+<h3 id="11-将安装包解压到指定目录">1.1 将安装包解压到指定目录</h3>
+<p><img src="https://oscimg.oschina.net/oscnet/up-9080c515126de1a50b43bb7fdd263ffeb05.png" alt=""></p>
+<h2 id="2-配置环境变量">2. 配置环境变量</h2>
 <ul>
-<li>每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。</li>
+<li>为什么要配置环境变量呢?</li>
 </ul>
-<p><img src="https://oscimg.oschina.net/oscnet/up-04f36386dfd00199038ca87cba3e1f17bc0.png" alt=""></p>
-<h1 id="3-xpath中节点选择的工具">3. XPath中节点选择的工具</h1>
-<pre><code>Chrome浏览器插件： XPath Helper
-下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b
-Firefox浏览器插件：xPath Finder
-注意： 这些工具是用来学习XPath语法的，当熟练掌握XPath的语法后就可以直接在代码中编写XPath而不一定非要用此工具。
-</code></pre><h1 id="4-xpath语法">4. XPath语法</h1>
+<pre><code>因为我们把hugo.exe解压到了D:\dev\hugo下面。hugo命令只能在该目录下才能识别。
+如果我们想把博客目录建到其它目录下，就要配置环境变量。
+</code></pre><h3 id="21-步骤1鼠标右键-属性">2.1 步骤1：鼠标右键-&gt;属性</h3>
+<p><img src="https://oscimg.oschina.net/oscnet/up-4543acda5ac44481c86a21f88d27175217e.png" alt=""></p>
+<h3 id="22-步骤2点击高级系统设置">2.2 步骤2：点击高级系统设置</h3>
+<p><img src="https://oscimg.oschina.net/oscnet/up-ed8889519a0e9f7fcdbea59d92f2bc4a93b.png" alt=""></p>
+<h3 id="23-步骤3点击环境变量">2.3 步骤3：点击环境变量</h3>
+<p><img src="https://oscimg.oschina.net/oscnet/up-ddc63407c437887b907ccea2122bda4c8bd.png" alt=""></p>
+<h3 id="24-步骤4选中path点击编辑">2.4 步骤4：选中path，点击编辑</h3>
+<p><img src="https://oscimg.oschina.net/oscnet/up-14aef2f5d80fd3560638308d531adefb797.png" alt=""></p>
+<h3 id="25-步骤5点击新建">2.5 步骤5：点击新建</h3>
+<p><img src="https://oscimg.oschina.net/oscnet/up-75923b65144c4cce17874c70dbc576ba641.png" alt=""></p>
+<h3 id="26-步骤6hugoexe目录配置ok后点击确定一路确定">2.6 步骤6：Hugo.exe目录,配置ok后点击确定，一路确定</h3>
+<p><img src="https://oscimg.oschina.net/oscnet/up-913cd62d7ec1913b73a2273792746c5afe0.png" alt=""></p>
+<h2 id="3hugo新建博客">3.hugo新建博客</h2>
+<h3 id="31-打开cmd命令行">3.1 打开cmd命令行</h3>
 <ul>
-<li>我们将在下面的例子中使用这个 XML 文档</li>
+<li>
+<p>方式一: 快捷键:win+R键  win就是你的键盘上的那个四个格格
+<img src="https://oscimg.oschina.net/oscnet/up-3ab3f656f2ee9814dd09add6c7fbbb427a2.png" alt=""></p>
+</li>
+<li>
+<p>方式二: 通过电脑搜索cmd
+<img src="https://oscimg.oschina.net/oscnet/up-3737967a7cdabe675cef7e889250aa63e35.png" alt=""></p>
+</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;bookstore&gt;</span>
+<h3 id="32-输入如下命令">3.2 输入如下命令</h3>
+<pre><code>命令: hugo new site /path/to/site
 
-<span style="color:#f92672">&lt;book&gt;</span>
-  <span style="color:#f92672">&lt;title</span> <span style="color:#a6e22e">lang=</span><span style="color:#e6db74">&#34;eng&#34;</span><span style="color:#f92672">&gt;</span>Harry Potter<span style="color:#f92672">&lt;/title&gt;</span>
-  <span style="color:#f92672">&lt;price&gt;</span>29.99<span style="color:#f92672">&lt;/price&gt;</span>
-<span style="color:#f92672">&lt;/book&gt;</span>
+比如  hugo new site E:/hugo/myBlogger
+就会在E盘的hugo文件夹下新建一个叫myBlogger的hugo站点
+</code></pre><p><img src="https://oscimg.oschina.net/oscnet/up-abe17faa4cadb25309cbbe8a259254b68c9.png" alt=""></p>
+<h3 id="32-hugo新建页面和文章">3.2 hugo新建页面和文章</h3>
+<h4 id="321-新建一个links页面">3.2.1 新建一个links页面</h4>
+<pre><code>命令: hugo new links.md
+</code></pre><p><img src="https://oscimg.oschina.net/oscnet/up-7bad90662db03d1fa3741a6b2b977787086.png" alt=""></p>
+<p>links.md自动生成到了content.links.md,  内容如下</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-8161b9aff24fadf3c470b97bc902538fb80.png" alt=""></p>
+<h4 id="322-创建第一篇文章放到post目录-方便以后生成聚合页面">3.2.2 创建第一篇文章,放到post目录, 方便以后生成聚合页面</h4>
+<pre><code>命令: hugo new post/myfirst.md
+</code></pre><p><img src="https://oscimg.oschina.net/oscnet/up-3ad9f629737cedf15037cb248b2a3d80fbd.png" alt=""></p>
+<p>myfirst.md 自动生成到了 content/post/myfirst.md, 内容如下:</p>
+<p><strong>(需要注意: 这里需要把draft删除掉或者改为false，不然正式生产的时候不会生成文章，因为draft是草稿)</strong></p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-7ca8d5184ef2fe74748dd939e1ab7fe5310.png" alt=""></p>
+<h4 id="323-hugo安装主题">3.2.3 hugo安装主题</h4>
+<pre><code>可以去官方主题列表themes.gohugo.io里面去挑选自己想要的主题
+</code></pre><p><img src="https://oscimg.oschina.net/oscnet/up-7d5088bd5279e6efd6fd7e920d879778c5e.png" alt=""></p>
+<pre><code>我们使用gethub上一个icarus主题。
+github.com/digitalcraftsman/hugo-icarus-theme
+下载完成后放到如下目录: 
+</code></pre><p><img src="https://oscimg.oschina.net/oscnet/up-2897a694012b7607c2a1dfbe4fff0344228.png" alt=""></p>
+<h4 id="324-配置主题">3.2.4 配置主题</h4>
+<pre><code>找到刚刚下载的主题, 打开config.toml文件。
+E:\hugo\myBlogger\themes\hugo-icarus-theme-master\exampleSite\config.toml
+</code></pre><p><img src="https://oscimg.oschina.net/oscnet/up-66e1e7d040ad32fb17aca3c2b77acfa9180.png" alt=""></p>
+<pre><code>将内容替换到myBlogger\config.toml中
 
-<span style="color:#f92672">&lt;book&gt;</span>
-  <span style="color:#f92672">&lt;title</span> <span style="color:#a6e22e">lang=</span><span style="color:#e6db74">&#34;eng&#34;</span><span style="color:#f92672">&gt;</span>Learning XML<span style="color:#f92672">&lt;/title&gt;</span>
-  <span style="color:#f92672">&lt;price&gt;</span>39.95<span style="color:#f92672">&lt;/price&gt;</span>
-<span style="color:#f92672">&lt;/book&gt;</span>
-
-<span style="color:#f92672">&lt;/bookstore&gt;</span>
-</code></pre></div><h2 id="41-选取节点">4.1 选取节点</h2>
-<pre><code>XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。
-使用chrome插件选择标签时候，选中是时，选中的标签会添加属性class=“xh-highlight”
-</code></pre><ul>
-<li>下面列出了最有用的表达式：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nodename</td>
-<td>选中该元素</td>
-</tr>
-<tr>
-<td>/</td>
-<td>从根节点选取、或者是元素和元素间的过渡</td>
-</tr>
-<tr>
-<td>//</td>
-<td>从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置</td>
-</tr>
-<tr>
-<td>.</td>
-<td>选取当前节点</td>
-</tr>
-<tr>
-<td>..</td>
-<td>选取当前节点的父节点</td>
-</tr>
-<tr>
-<td>@</td>
-<td>选取属性</td>
-</tr>
-<tr>
-<td>text()</td>
-<td>选取文本</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>实例(对应上面的表达式):</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>bookstore</td>
-<td>选择bookstore元素</td>
-</tr>
-<tr>
-<td>/bookstore</td>
-<td>选取跟元素bookstore。注：假如路径起始于正斜杠(/)，则此路径始终代表到某元素的绝对路径！</td>
-</tr>
-<tr>
-<td>bookstore/book</td>
-<td>选取属于bookstore的子元素的所有book元素</td>
-</tr>
-<tr>
-<td>//book</td>
-<td>选取所有book子元素,而不管它们在文档中的位置</td>
-</tr>
-<tr>
-<td>bookstore//book</td>
-<td>选取bookstore元素的后代的所有book元素,而不管它们位于bookstore之下的什么位置</td>
-</tr>
-<tr>
-<td>//book/title/@lang</td>
-<td>选择所有的book下面的title中的lang属性的值</td>
-</tr>
-<tr>
-<td>//book/title/text()</td>
-<td>选择所有的book下面的title的文本</td>
-</tr>
-</tbody>
-</table>
+baseurl需要改成你的github pages的仓库名，theme、themesDir改成主题目录名和主题路径（相对路径,绝对路径都可以,我使用的是相对路径）。
+其他配置可以参考icarus主题的文档，这里就不做介绍了。
+</code></pre><p><img src="https://oscimg.oschina.net/oscnet/up-72340d4e1a2ee123681c13917d8a10dae5e.png" alt=""></p>
+<h3 id="4-执行如下命令">4. 执行如下命令</h3>
+<pre><code>hugo server
+</code></pre><p><img src="https://oscimg.oschina.net/oscnet/up-26135d4cd653d60f44be53d492b8a509335.png" alt=""></p>
+<p>访问该路径即可看到自己的博客了: localhost:1313  如果不行,看下之前3.2.2步骤中是否删掉了draft:true</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-3182c8ddbc7a56aa204e949686ffe9cbd03.png" alt=""></p>
+<h3 id="有时间再更新将本地的hugo部署到github上的教程">有时间再更新将本地的hugo部署到github上的教程</h3>
 
         </div>
         <footer class="article-footer">
-    <a data-url="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/" data-id="b5115f97e4be92dd1251133c02d469f4" class="article-share-link">
+    <a data-url="https://zhang-550.github.io/1/01/01/" data-id="894ecec029d0eb5908a28e83046e9787" class="article-share-link">
         <i class="fa fa-share"></i>
         
     </a>
     
-    <a href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/#disqus_thread" class="article-comment-link">
+    <a href="https://zhang-550.github.io/1/01/01/#disqus_thread" class="article-comment-link">
         
     </a>
     
@@ -482,11 +445,11 @@ Firefox浏览器插件：xPath Finder
     
 
     
-    <a href="https://zhang-550.github.io/2020/03/24/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Ehugo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">
           
       </strong>
-      <div class="article-nav-title">搭建一个基于hugo的个人博客</div>
+      <div class="article-nav-title">XPath学习</div>
     </a>
     
 </nav>
@@ -535,23 +498,6 @@ Firefox浏览器插件：xPath Finder
             
             <li>
                 <div class="item-thumbnail">
-                    <a href="https://zhang-550.github.io/2020/03/24/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Ehugo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="thumbnail">
-                    
-                        <span class="thumbnail-image thumbnail-none"></span>
-                    
-                    </a>
-                </div>
-                <div class="item-inner">
-                    
-                    <p class="item-title"><a href="https://zhang-550.github.io/2020/03/24/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Ehugo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="title">搭建一个基于hugo的个人博客</a></p>
-                    <p class="item-date">
-                        <time datetime="2020-03-24 19:20:19 &#43;0800 CST" itemprop="datePublished">2020-03-24</time>
-                    </p>
-                </div>
-            </li>
-            
-            <li>
-                <div class="item-thumbnail">
                     <a href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/" class="thumbnail">
                     
                         <span class="thumbnail-image thumbnail-none"></span>
@@ -563,6 +509,23 @@ Firefox浏览器插件：xPath Finder
                     <p class="item-title"><a href="https://zhang-550.github.io/2020/03/21/xpath%E5%AD%A6%E4%B9%A0/" class="title">XPath学习</a></p>
                     <p class="item-date">
                         <time datetime="2020-03-21 14:23:19 &#43;0800 CST" itemprop="datePublished">2020-03-21</time>
+                    </p>
+                </div>
+            </li>
+            
+            <li>
+                <div class="item-thumbnail">
+                    <a href="https://zhang-550.github.io/1/01/01/" class="thumbnail">
+                    
+                        <span class="thumbnail-image thumbnail-none"></span>
+                    
+                    </a>
+                </div>
+                <div class="item-inner">
+                    
+                    <p class="item-title"><a href="https://zhang-550.github.io/1/01/01/" class="title"></a></p>
+                    <p class="item-date">
+                        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
                     </p>
                 </div>
             </li>

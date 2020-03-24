@@ -6,10 +6,21 @@
     <description>Recent content on 漫路个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Mar 2020 14:23:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 19:20:19 +0800</lastBuildDate>
     
 	<atom:link href="https://zhang-550.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>搭建一个基于hugo的个人博客</title>
+      <link>https://zhang-550.github.io/2020/03/24/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Ehugo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Tue, 24 Mar 2020 19:20:19 +0800</pubDate>
+      
+      <guid>https://zhang-550.github.io/2020/03/24/%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8Ehugo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>额,一时兴起, 搭建一个基于hugo的个人博客玩一下 博客地址: https://zhang-550.github.io/
+1. 下载安装hugo 官网下载地址https://github.com/gohugoio/hugo/releases我们根据自身情况选择下载我是win64位的,所以就用win64进行演示了1.1 将安装包解压到指定目录 2. 配置环境变量  为什么要配置环境变量呢?  因为我们把hugo.exe解压到了D:\dev\hugo下面。hugo命令只能在该目录下才能识别。如果我们想把博客目录建到其它目录下，就要配置环境变量。2.1 步骤1：鼠标右键-&amp;gt;属性 2.2 步骤2：点击高级系统设置 2.3 步骤3：点击环境变量 2.4 步骤4：选中path，点击编辑 2.5 步骤5：点击新建 2.6 步骤6：Hugo.exe目录,配置ok后点击确定，一路确定 3.hugo新建博客 3.1 打开cmd命令行   方式一: 快捷键:win+R键 win就是你的键盘上的那个四个格格   方式二: 通过电脑搜索cmd   3.2 输入如下命令 命令: hugo new site /path/to/site比如 hugo new site E:/hugo/myBlogger就会在E盘的hugo文件夹下新建一个叫myBlogger的hugo站点3.2 hugo新建页面和文章 3.2.1 新建一个links页面 命令: hugo new links.mdlinks.md自动生成到了content.links.md, 内容如下
+3.2.2 创建第一篇文章,放到post目录, 方便以后生成聚合页面 命令: hugo new post/myfirst.</description>
+    </item>
     
     <item>
       <title>XPath学习</title>
